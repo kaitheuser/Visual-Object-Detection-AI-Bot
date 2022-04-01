@@ -316,31 +316,3 @@ def get_train_data(fname, bad_data_list):
     y_train = sorted_compiled_train_data[:, -1]
 
     return X_train, y_train
-
-
-if __name__ == '__main__':
-
-    # Test load_txt() function
-    fname = 'labels.txt'
-    labels_df = load_txt(fname)
-    #print(labels_df)
-
-    # Test extract_pixels() function
-    bad_data_list = ['9.jpg', '10.jpg', '15.jpg', '18.jpg', '23.jpg',
-                     '29.jpg', '31.jpg', '41.jpg', '44.jpg', '46.jpg',
-                     '50.jpg', '59.jpg', '60.jpg', '67.jpg', '68.jpg',
-                     '73.jpg', '74.jpg', '75.jpg', '77.jpg', '78.jpg',
-                     '79.jpg', '84.jpg', '88.jpg', '97.jpg', '99.jpg',
-                     '100.jpg', '101.jpg', '102.jpg', '103.jpg', '105.jpg',
-                     '107.jpg', '109.jpg', '117.jpg', '118.jpg', '119.jpg',
-                     '123.jpg', '126.jpg', '129.jpg', '130.jpg', '132.jpg']
-    phone_train_data = extract_pixels(labels_df, bad_data_list)
-    #print(phone_train_data.shape)
-
-    # Test compile_train_data() function
-    X_train, y_train = get_train_data(fname, bad_data_list)
-    #print(X_train.shape, y_train.shape)
-
-    
-    
-
